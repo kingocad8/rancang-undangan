@@ -127,7 +127,7 @@ footer{background:#122b1e;color:#cfe0d4;padding:44px 0 90px}
 
 /* REVEAL — hanya aktif kalau JS jalan, supaya konten tetap tampil tanpa JS */
 html.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.reveal.tampil{opacity:1;transform:none}
+html.js .reveal.tampil{opacity:1;transform:none}
 
 /* RESPONSIVE */
 @media(max-width:900px){
