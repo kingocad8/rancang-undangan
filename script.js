@@ -1,6 +1,9 @@
 // Rancang Undangan — website company profile
 // 1. Menu mobile, 2. FAQ accordion, 3. Animasi reveal saat scroll
 
+// Tandai JS aktif — dipakai CSS supaya animasi reveal tidak menyembunyikan konten bila JS gagal
+document.documentElement.classList.add('js');
+
 // 1. Toggle menu navigasi (mobile)
 (function () {
   var toggle = document.getElementById("navToggle");
@@ -8,10 +11,12 @@
   if (!toggle || !links) return;
   toggle.addEventListener("click", function () {
     links.classList.toggle("buka");
+    toggle.setAttribute("aria-expanded", links.classList.contains("buka"));
   });
   links.querySelectorAll("a").forEach(function (a) {
     a.addEventListener("click", function () {
       links.classList.remove("buka");
+      toggle.setAttribute("aria-expanded", "false");
     });
   });
 })();
